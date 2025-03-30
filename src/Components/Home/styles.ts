@@ -1,6 +1,13 @@
 import {StyleSheet} from "react-native";
 
 export const styles = StyleSheet.create({
+
+    main: {
+        flex:1,
+        backgroundColor:'#0D0D0D',
+        fontFamily:'Inter'
+    },
+
     header:{
        flexDirection: "row", 
         marginTop: 70,
@@ -28,6 +35,7 @@ export const styles = StyleSheet.create({
         color:'#F2F2F2',
         padding:16,
         fontSize:16,
+       
     },
     button: {
         width:52,
@@ -43,6 +51,44 @@ export const styles = StyleSheet.create({
         color:'#F2F2F2',
         fontSize:24,
         
+    },    
+    containerSeeTasks: {
+        marginHorizontal:24,
+        marginTop:32,
+        marginBottom:20,
+        flexDirection:'row',
+        alignItems:'center',
+        justifyContent:'space-between',
     },
+    taskList: {
+      
+    },
+    emptyBoxMessage: {
+        marginHorizontal:24,
+        paddingHorizontal:20,
+        paddingVertical:48,
+        justifyContent:'center',
+        alignItems:'center',
+        borderTopWidth:1,
+        borderStyle:'solid',
+        borderColor:'#333333',
+        
+    },
+    emptyBoxMessageText:{
+        marginHorizontal:20,
+        marginTop:16,
+        alignItems:'center',
+        justifyContent:'center',
+      
+    },
+    emptyBoxMessageTitle: {
+        fontSize:14,
+        fontWeight:'bold',
+        color:'#808080',
+    },
+    emptyBoxMessageDescription: {
+        fontSize:14,
+        color:'#808080',
+    }
 
 })

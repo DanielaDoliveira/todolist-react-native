@@ -3,9 +3,12 @@ import {styles} from "./styles";
 import Rocket from '../../Images/Logo/Rocket'
 import To from "../../Images/Logo/To";
 import Do from "../../Images/Logo/Do";
+import Clipboard from "../../Images/Clipboard/Clipboard";
 import { PlusCircle} from 'phosphor-react-native';
+import {TaskCounter} from "../TaskCounter";
+
 export function Home() {
-    return (<>
+    return (<View style= {styles.main}>
     <View style={styles.header}>
 
         <Rocket style={styles.logoRocket}/>
@@ -30,6 +33,26 @@ export function Home() {
             </TouchableOpacity>
 
         </View>
-    
-    </>);
+       
+        <View style={styles.containerSeeTasks}>
+            
+            <TaskCounter taskName={"Criadas"} numberOfTasks={0}/>
+            <TaskCounter taskName={"Concluídas"} numberOfTasks={0}/>
+        </View>
+        <View style={styles.taskList}>
+            
+            <View style={styles.emptyBoxMessage}>
+              <Clipboard/>
+             <View style={styles.emptyBoxMessageText}>
+                 <Text style={styles.emptyBoxMessageTitle}>
+                    Você ainda não tem tarefas cadastradas
+                 </Text>
+                 <Text style={styles.emptyBoxMessageDescription}>
+                     Crie tarefas e organize seus itens a fazer
+                 </Text>
+             </View>
+            </View>
+            
+        </View>
+    </View>);
 }

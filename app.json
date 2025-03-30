@@ -5,19 +5,33 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "dark",
     "newArchEnabled": true,
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
       "backgroundColor": "#0D0D0D",
       "packagerOpts": {
-        "sourceExts": ["js", "jsx", "svgx"],
+        "sourceExts": [
+          "js",
+          "jsx",
+          "svgx"
+        ],
         "transformer": "node_modules/react-native-svg-transformer/index.js"
-      }
+      },
+      "plugins": [
+        [
+          "expo-font",
+          {
+            "fonts": ["./assets/Fonts/Inter/inter.ttf"]
+            
+          }
+        ]
+      ]
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "backgroundColor": "#0D0D0D"
     },
     "android": {
       "adaptiveIcon": {
@@ -27,6 +41,9 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      "expo-font"
+    ]
   }
 }
