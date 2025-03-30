@@ -61,7 +61,11 @@ export const styles = StyleSheet.create({
         justifyContent:'space-between',
     },
     taskList: {
-      
+      marginTop:20,
+        marginHorizontal:24,
+    },
+    cardList:{
+        marginBottom:8,
     },
     emptyBoxMessage: {
         marginHorizontal:24,
@@ -89,6 +93,9 @@ export const styles = StyleSheet.create({
     emptyBoxMessageDescription: {
         fontSize:14,
         color:'#808080',
+    },
+    containerTasks: {
+     
     }
 
 })
