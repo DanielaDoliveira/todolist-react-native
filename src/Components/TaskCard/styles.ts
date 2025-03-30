@@ -1,6 +1,12 @@
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
+
+    taskList: {
+       
+        marginHorizontal:24,
+    },
+
     container: {// envolve cada card
         flexDirection: "row",
         justifyContent: "center",
@@ -37,6 +43,17 @@ export const styles = StyleSheet.create({
         paddingVertical:12,
     
     },
+    textCardChecked: {
+     textDecorationLine: 'line-through',
+        flex:1,
+        color: '#808080',
+        fontSize: 14,
+        marginHorizontal:8,
+        textAlign:'left',
+        paddingVertical:12,
+       
+
+    },
     btnDelete: {
        justifyContent: "center",
         alignItems: "center",
@@ -45,7 +62,8 @@ export const styles = StyleSheet.create({
         marginLeft:8,
       
      
-    }
+    },
+ 
 
 
 })

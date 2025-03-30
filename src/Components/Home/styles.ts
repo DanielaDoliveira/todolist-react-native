@@ -60,11 +60,7 @@ export const styles = StyleSheet.create({
         alignItems:'center',
         justifyContent:'space-between',
     },
-    taskList: {
-      marginTop:20,
-        marginHorizontal:24,
-    },
-
+  
     emptyBoxMessage: {
         marginHorizontal:24,
         paddingHorizontal:20,
@@ -79,26 +75,26 @@ export const styles = StyleSheet.create({
     emptyBoxMessageText:{
         marginHorizontal:20,
         marginTop:16,
-        alignItems:'center',
+     alignItems:'center',
         justifyContent:'center',
+        width:287,
       
     },
     emptyBoxMessageTitle: {
         fontSize:14,
         fontWeight:'bold',
         color:'#808080',
+       
+       
+        
     },
     emptyBoxMessageDescription: {
         fontSize:14,
         color:'#808080',
     },
- 
-    containerTasks: {
-        // Envolve o grupo de cards das tarefas
-     alignItems:'center',
-        justifyContent:'center',
-     
-    },
+
+//card
+
 
 
 })
