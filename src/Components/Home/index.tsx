@@ -34,17 +34,23 @@ export function Home() {
 
         </View>
        
-        <View style={styles.containerSeeTasks}>
-            
-            <TaskCounter taskName={"Criadas"} numberOfTasks={0}/>
-            <TaskCounter taskName={"Concluídas"} numberOfTasks={0}/>
-        </View>
-        <View style={styles.taskList}>
-            <View style = { styles.containerTasks}>
-                <TaskCard description={" Integer urna interdum massa libero auctor neque turpis turpis semper."}/>
-                <TaskCard description={" Integer urna interdum massa libero auctor neque turpis turpis semper."}/>
+    
+           <View style={styles.containerSeeTasks}>
 
-            </View>
+               <TaskCounter taskName={"Criadas"} numberOfTasks={0}/>
+               <TaskCounter taskName={"Concluídas"} numberOfTasks={0}/>
+           </View>
+           
+           <View style={styles.taskList}>
+               <View style = { styles.containerTasks}>
+                   <TaskCard description={" Estudar React Native para construir apps mobile"}/>
+                   <TaskCard description={" Integer urna interdum massa libero auctor neque turpis turpis semper."}/>
+              
+                   <TaskCard description={" Estudar .NET."}/>
+                 
+
+               </View>
+       
             
             {/*<View style={styles.emptyBoxMessage}>*/}
             {/*  <Clipboard/>*/}

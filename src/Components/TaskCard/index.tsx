@@ -19,9 +19,9 @@ export function TaskCard({description,...rest}:Props) {
             <Text style={styles.textCard}>
                 {description}
             </Text>
-         <TouchableOpacity style={styles.btnDelete}>
-             <Trash/>
-         </TouchableOpacity>
+            <TouchableOpacity style={styles.btnDelete}>
+                <Trash/>
+            </TouchableOpacity>
         </View>
     );
 }

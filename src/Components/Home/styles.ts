@@ -64,9 +64,7 @@ export const styles = StyleSheet.create({
       marginTop:20,
         marginHorizontal:24,
     },
-    cardList:{
-        marginBottom:8,
-    },
+
     emptyBoxMessage: {
         marginHorizontal:24,
         paddingHorizontal:20,
@@ -94,8 +92,13 @@ export const styles = StyleSheet.create({
         fontSize:14,
         color:'#808080',
     },
+ 
     containerTasks: {
+        // Envolve o grupo de cards das tarefas
+     alignItems:'center',
+        justifyContent:'center',
      
-    }
+    },
+
 
 })

@@ -1,37 +1,50 @@
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
-    container: {
+    container: {// envolve cada card
         flexDirection: "row",
-      
-        width: '100%',
-        height: 64,
-       
         justifyContent: "center",
         alignItems: "center",
-         backgroundColor: "#262626",
-        marginBottom: 8,
-       paddingHorizontal:20, 
-        paddingVertical: 12,
         borderRadius: 8,
+        width: "100%",
+        backgroundColor: "#262626",
+        marginBottom:8,
+        paddingLeft:12,
+        paddingRight:8,
+        paddingVertical:12,
+      
+        
     }, 
     
     checkbox: {
-        marginLeft: 15,
+        marginRight: 8,
+        
+        marginLeft:12,
+        width:24,
+        height:24,
         borderRadius: 100,
         color:'#F2F2F2',
+       paddingLeft:8,
+       
        
     },
     textCard: {
+        flex:1,
         color: '#F2F2F2',
         fontSize: 14,
-        marginHorizontal:8
+        marginHorizontal:8,
+       textAlign:'left',
+        paddingVertical:12,
+    
     },
     btnDelete: {
        justifyContent: "center",
         alignItems: "center",
         width: 32,
         height: 32,
+        marginLeft:8,
+      
+     
     }
 
 
