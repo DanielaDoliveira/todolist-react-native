@@ -8,18 +8,42 @@ import { PlusCircle} from 'phosphor-react-native';
 import {TaskCounter} from "../TaskCounter";
 import { TaskCard} from "../TaskCard"
 import {useState} from "react";
+import 'react-native-get-random-values';
+import { v4 as uuidv4 } from 'uuid'
+import {TaskDTO} from "../../DTO/TaskDTO";
 export function Home() {
-    
-    const [item,setItem] = useState<string[]>([]);
+    const [tasks, setTasks] = useState <TaskDTO[]> ([])
+
+ 
     const[taskInput,setTaskInput] = useState("");
-    const [isCheck, setIsChecked] = useState(false);
+  
     const [taskCounter,setTaskCounter] = useState(0);
     const [taskFinishedCounter,setTaskFinishedCounter] = useState(0);
 
-    function handleChange() {
-        setIsChecked(!isCheck);
+
+    function handleTaskDone(id: string) {
+        setTasks((task) =>
+            task.map((task) => {
+             task.id === id ? (Complete()) : null
+                console.log(task)
+
+function Complete(){
+    task.isCompleted  = !task.isCompleted
+
+    if(task.isCompleted) {
+        setTaskFinishedCounter(taskFinishedCounter + 1);
     }
-    
+    else{
+        setTaskFinishedCounter(taskFinishedCounter -  1);
+    }
+}
+             
+                return task
+            }),
+            
+        )
+    }
+
     function handleChangeAddTaskCounter(){
         setTaskCounter(taskCounter  + 1);
     }
@@ -27,9 +51,17 @@ export function Home() {
         setTaskCounter(taskCounter - 1);
     }
     function handleTaskAdd(){
-       setItem(prevState => [...prevState,taskInput])
-        setTaskInput('')
-        handleChangeAddTaskCounter()
+        if (taskInput !== '' && taskInput.length >= 5) {
+            setTasks(prevState => [...prevState,
+                {id: uuidv4(), isCompleted: false, description: taskInput.trim()},
+
+            ])
+            setTaskInput('')
+            handleChangeAddTaskCounter()
+        }
+        else{
+            Alert.alert( "Erro ao adicionar tarefa", "Você precisa escrever mais de cinco caracteres para adicionar uma tarefa.")
+        }
     }
     
    
@@ -51,12 +83,12 @@ export function Home() {
         
     }
 
-    function FinalizeRemoveTask(task:string){
-        setItem(prevState => prevState.filter(item => item!==task))
+    function FinalizeRemoveTask(id:string){
+        setTasks((tasks) => tasks.filter((task) => task.id !== id)),
         handleChangeRemoveTaskCounter()
-       setTaskFinishedCounter(taskFinishedCounter+1)
+      
     }
-    
+
     
     return (<View style= {styles.main}>
     <View style={styles.header}>
@@ -92,15 +124,15 @@ export function Home() {
                <TaskCounter taskName={"Concluídas"} numberOfTasks={taskFinishedCounter}/>
            </View>
            
-        <FlatList data={item}
+        <FlatList data={tasks}
                   showsVerticalScrollIndicator={false}
-                  keyExtractor={data => data}
+                  keyExtractor={item => uuidv4()}
                   renderItem={ ({ item })=>(
                       <TaskCard
-                          key={item}
-                         description={item}
-                          onRemove={()=>handleRemoveTask(item)}
-                          
+                          key={item.id}
+                          onDone={()=>handleTaskDone(item.id)}
+                          onRemove={()=>handleRemoveTask(item.id)}
+                          {...item}
 
                       />
                       

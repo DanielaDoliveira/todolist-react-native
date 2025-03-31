@@ -1,30 +1,43 @@
 import {View, Text, TouchableOpacity} from "react-native";
 import {styles} from "./styles";
-import Checkbox from 'expo-checkbox';
+import {CheckBox} from '@rneui/themed'
 import React, { useState} from "react";
 import Trash from "../../Images/Trash/Trash";
+import {TaskDTO} from "../../DTO/TaskDTO";
 
-type Props = {
-    description: string;
+
+type Props = TaskDTO & {
     onRemove: () => void;
-   
+    onDone: (id:string) => void;
+ 
 }
 
-export function TaskCard({description,onRemove,...rest}:Props) {
+export function TaskCard({id,isCompleted,description,onRemove,onDone,...rest}:Props) {
     
-  const [isCheck, setIsChecked] = useState(false);
-  function handleChange() {
-      setIsChecked(!isCheck);
-  }
+
+
     return (
+        
+        
         <View style={styles.taskList}>
         
         <View style= {styles.container}>
-            <Checkbox style={styles.checkbox} value={isCheck} onValueChange={handleChange}
-            color={isCheck?'#5E60CE':'#4EA8DE'}
+            
+            <CheckBox style = { styles.checkbox}
+                containerStyle = {{backgroundColor: 'transparent' }}
+                checkedColor = "#5E60CE"
+                uncheckedColor = "#4EA8DE"
+                checkedIcon = "check-circle"
+                uncheckedIcon = "circle-o"
+                checked = {isCompleted}
+                onPress = {()=> {
+               onDone(id)
+                 
+                }
+              
+            }
             />
-
-            {isCheck?(
+            {isCompleted?(
                         <Text style={ styles.textCardChecked}>{description}</Text>
                 ) : (
                         <Text style={ styles.textCard}>{description}</Text>

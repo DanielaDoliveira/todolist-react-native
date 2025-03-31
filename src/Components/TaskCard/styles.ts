@@ -6,6 +6,14 @@ export const styles = StyleSheet.create({
        
         marginHorizontal:24,
     },
+    containerSeeTasks: {
+        marginHorizontal:24,
+        marginTop:32,
+        marginBottom:20,
+        flexDirection:'row',
+        alignItems:'center',
+        justifyContent:'space-between',
+    },
 
     container: {// envolve cada card
         flexDirection: "row",
